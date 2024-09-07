@@ -2,12 +2,10 @@ module github.com/LuigiVanacore/ebiten_pokemon
 
 go 1.23.0
 
-require (
-	github.com/LuigiVanacore/ebiten_extended v0.0.0-20240329170434-1771503ff0a8
-	github.com/hajimehoshi/ebiten/v2 v2.7.0
-)
+require github.com/hajimehoshi/ebiten/v2 v2.7.0
 
 require (
+	github.com/LuigiVanacore/ebiten_extended v0.0.0-20240903225731-e08085b3a1fb // indirect
 	github.com/ebitengine/gomobile v0.0.0-20240329170434-1771503ff0a8 // indirect
 	github.com/ebitengine/hideconsole v1.0.0 // indirect
 	github.com/ebitengine/purego v0.7.0 // indirect

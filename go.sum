@@ -1,5 +1,7 @@
 github.com/LuigiVanacore/ebiten_extended v0.0.0-20240616150200-2eebb8f251ff h1:LVQ4WA+Nfm/yOjMonzZEttxEb90l3sUkme1gy8TlUzA=
 github.com/LuigiVanacore/ebiten_extended v0.0.0-20240616150200-2eebb8f251ff/go.mod h1:U9Kn3AknDxP47G02YgZRr2UoX6RDrhY6+n/zL9c2d3Y=
+github.com/LuigiVanacore/ebiten_extended v0.0.0-20240903225731-e08085b3a1fb h1:ZXkDilTtueR10xhku4N51sXAde+nXl0hDfY9XxJ/3SE=
+github.com/LuigiVanacore/ebiten_extended v0.0.0-20240903225731-e08085b3a1fb/go.mod h1:U9Kn3AknDxP47G02YgZRr2UoX6RDrhY6+n/zL9c2d3Y=
 github.com/ebitengine/gomobile v0.0.0-20240329170434-1771503ff0a8 h1:5e8X7WEdOWrjrKvgaWF6PRnDvJicfrkEnwAkWtMN74g=
 github.com/ebitengine/gomobile v0.0.0-20240329170434-1771503ff0a8/go.mod h1:tWboRRNagZwwwis4QIgEFG1ZNFwBJ3LAhSLAXAAxobQ=
 github.com/ebitengine/hideconsole v1.0.0 h1:5J4U0kXF+pv/DhiXt5/lTz0eO5ogJ1iXb8Yj1yReDqE=
