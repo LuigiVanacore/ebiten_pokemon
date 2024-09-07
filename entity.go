@@ -49,14 +49,14 @@ func (e *Entity) get_state() string {
 
 func (e *Entity) change_facing_direction(target_pos math2D.Vector2D) {
 	relation := math2D.SubtractVectors(target_pos, e.GetPosition())
-	if relation.Y < 30 {
-		if relation.X > 0 {
+	if relation.Y() < 30 {
+		if relation.X() > 0 {
 			e.SetFacingDirection("right")
 		} else {
 			e.SetFacingDirection("left")
 		}
 	} else {
-		if relation.Y > 0 {
+		if relation.Y() > 0 {
 			e.SetFacingDirection("down")
 		} else {
 			e.SetFacingDirection("up")
