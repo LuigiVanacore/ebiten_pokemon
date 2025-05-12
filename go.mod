@@ -2,17 +2,21 @@ module github.com/LuigiVanacore/ebiten_pokemon
 
 go 1.23.0
 
-require github.com/hajimehoshi/ebiten/v2 v2.7.0
+replace github.com/LuigiVanacore/ebiten_extended => ../ebiten_extended
 
 require (
-	github.com/LuigiVanacore/ebiten_extended v0.0.0-20240903225731-e08085b3a1fb // indirect
-	github.com/ebitengine/gomobile v0.0.0-20240329170434-1771503ff0a8 // indirect
+	github.com/LuigiVanacore/ebiten_extended v0.0.0-20250108075911-f0cb17682328
+	github.com/hajimehoshi/ebiten/v2 v2.8.6
+)
+
+require (
+	github.com/ebitengine/gomobile v0.0.0-20241016134836-cc2e38a7c0ee // indirect
 	github.com/ebitengine/hideconsole v1.0.0 // indirect
-	github.com/ebitengine/purego v0.7.0 // indirect
-	github.com/go-text/typesetting v0.1.1-0.20240325125605-c7936fe59984 // indirect
+	github.com/ebitengine/purego v0.8.1 // indirect
+	github.com/go-text/typesetting v0.2.1 // indirect
 	github.com/jezek/xgb v1.1.1 // indirect
-	golang.org/x/image v0.15.0 // indirect
-	golang.org/x/sync v0.6.0 // indirect
-	golang.org/x/sys v0.18.0 // indirect
-	golang.org/x/text v0.14.0 // indirect
+	golang.org/x/image v0.23.0 // indirect
+	golang.org/x/sync v0.10.0 // indirect
+	golang.org/x/sys v0.29.0 // indirect
+	golang.org/x/text v0.21.0 // indirect
 )

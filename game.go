@@ -1,3 +1,3 @@
-package ebitenpokemon
+package ebiten_pokemon
 
 
