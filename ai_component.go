@@ -1,0 +1,2 @@
+package ebiten_pokemon
+

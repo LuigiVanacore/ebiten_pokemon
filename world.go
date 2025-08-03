@@ -1,72 +1,31 @@
 package ebiten_pokemon
 
 import (
+	"time"
+
 	"github.com/LuigiVanacore/ebiten_extended"
-	"github.com/hajimehoshi/ebiten/v2"
 )
 
-type Game struct {
-}
 
-func NewGame(debugFlag bool) *Game {
 
-	ebiten_extended.GameManager().SetIsDebug(debugFlag)
 
-	return &Game{}
-}
-
-func (g *Game) Init() error {
-	return nil
-}
-
-func (g *Game) Update() error {
-	ebiten_extended.GameManager().Update()
-	return nil
-}
-
-func (g *Game) Draw(screen *ebiten.Image) {
-	op := &ebiten.DrawImageOptions{}
-	ebiten_extended.GameManager().Draw(screen, op)
-}
-
-func (g *Game) Layout(outsideWidth, outsideHeight int) (int, int) {
-	return SCREEN_WIDTH, SCREEN_HEIGHT
+type World struct {
+	encounter_timer *ebiten_extended.Timer
 }
 
 
 
-func (g *Game) LoadSprites() {
-	// This function is a placeholder for the actual implementation
-	// It should load all necessary sprites and resources for the game
-	// The implementation details depend on the specific game logic and rendering system
+func NewWorld() *World { 
 
+	world := &World{
+		encounter_timer: ebiten_extended.NewTimer( 20 * time.Second, false),
+	}
+ 
+
+	return world
 }
 
 
-// class AllSprites(pygame.sprite.Group):
-// 	def __init__(self):
-// 		super().__init__()
-// 		self.display_surface = pygame.display.get_surface()
-// 		self.offset = vector()
-// 		self.shadow_surf = import_image('..', 'graphics', 'other', 'shadow')
-// 		self.notice_surf = import_image('..', 'graphics', 'ui', 'notice')
-
-// 	def draw(self, player):
-// 		self.offset.x = -(player.rect.centerx - WINDOW_WIDTH / 2)
-// 		self.offset.y = -(player.rect.centery - WINDOW_HEIGHT / 2)
-
-// 		bg_sprites = [sprite for sprite in self if sprite.z < WORLD_LAYERS['main']]
-// 		main_sprites = sorted([sprite for sprite in self if sprite.z == WORLD_LAYERS['main']], key = lambda sprite: sprite.y_sort)
-// 		fg_sprites = [sprite for sprite in self if sprite.z > WORLD_LAYERS['main']]
-
-// 		for layer in (bg_sprites, main_sprites, fg_sprites):
-// 			for sprite in layer:
-// 				if isinstance(sprite, Entity):
-// 					self.display_surface.blit(self.shadow_surf, sprite.rect.topleft + self.offset + vector(40,110))
-// 				self.display_surface.blit(sprite.image, sprite.rect.topleft + self.offset)
-// 				if sprite == player and player.noticed:
-// 					rect = self.notice_surf.get_frect(midbottom = sprite.rect.midtop)
-// 					self.display_surface.blit(self.notice_surf, rect.topleft + self.offset)
 
 
 // class Game:
@@ -77,7 +36,6 @@ func (g *Game) LoadSprites() {
 // 		pygame.display.set_caption('Monster Hunter')
 // 		self.clock = pygame.time.Clock()
 // 		self.encounter_timer = Timer(2000, func = self.monster_encounter)
-
 
 // 		# player monsters 
 // 		self.player_monsters = {
@@ -123,9 +81,6 @@ func (g *Game) LoadSprites() {
 // 		self.index_open = False
 // 		self.battle = None
 // 		self.evolution = None
-
-
- 
 
 
 // 	def import_assets(self):
@@ -237,23 +192,9 @@ func (g *Game) LoadSprites() {
 // 				self.index_open = not self.index_open
 // 				self.player.blocked = not self.player.blocked
 
- 
 // 	def create_dialog(self, character):
 // 		if not self.dialog_tree:
 // 			self.dialog_tree = DialogTree(character, self.player, self.all_sprites, self.fonts['dialog'], self.end_dialog)
-
-func (g *Game) CreateDialog(character *Character) {
-	// This function is a placeholder for the actual implementation
-	// It should create a dialog tree or similar structure to handle character interactions
-	// The implementation details depend on the specific game logic and rendering system
-
-}
-
-func (g *Game) EndDialog(character *Character) {
-	// This function is a placeholder for the actual implementation
-	// It should handle the end of a dialog interaction with a character
-	// The implementation details depend on the specific game logic and rendering system
-}
 
 // 	def end_dialog(self, character):
 // 		self.dialog_tree = None

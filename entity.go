@@ -21,6 +21,7 @@ const (
 	MovingLeft
 	MovingRight
 )
+
 type Entity struct {
 	ebiten_extended.Node2D
 	speed     int
@@ -29,86 +30,86 @@ type Entity struct {
 	facing_direction EntityState
 }
 
-func NewEntity() *Entity {
-	return &Entity{}
-}
+// func NewEntity() *Entity {
+// 	return &Entity{}
+// }
 
 
-func (e *Entity) SetFacingDirection(direction EntityState) {
-	e.facing_direction = direction
-}
+// func (e *Entity) SetFacingDirection(direction EntityState) {
+// 	e.facing_direction = direction
+// }
 
-func (e *Entity) GetFacingDirection() EntityState {	
-	return e.facing_direction
-}
+// func (e *Entity) GetFacingDirection() EntityState {	
+// 	return e.facing_direction
+// }
 
 
 
-func (e *Entity) get_state() EntityState {
-	moving := e.direction.Magnitude() > 0
-	if moving {
-		if e.direction.X() != 0 {
-			if e.direction.X() > 0 {
-				return MovingRight
-			} else {
-				return MovingLeft
-			}
-		}
-		if e.direction.Y() != 0 {
-			if e.direction.Y() > 0 {
-				return MovingDown
-			} else {
-				return MovingUp
-			}
-		}
-	}
-	return Idle
-}
+// func (e *Entity) get_state() EntityState {
+// 	moving := e.direction.Magnitude() > 0
+// 	if moving {
+// 		if e.direction.X() != 0 {
+// 			if e.direction.X() > 0 {
+// 				return MovingRight
+// 			} else {
+// 				return MovingLeft
+// 			}
+// 		}
+// 		if e.direction.Y() != 0 {
+// 			if e.direction.Y() > 0 {
+// 				return MovingDown
+// 			} else {
+// 				return MovingUp
+// 			}
+// 		}
+// 	}
+// 	return Idle
+// }
 
-func (e *Entity) change_facing_direction(target_pos math2D.Vector2D) {
-	relation := math2D.SubtractVectors(target_pos, e.GetPosition())
-	if relation.Y() < 30 {
-		if relation.X() > 0 {
-			e.SetFacingDirection(MovingRight)
-		} else {
-			e.SetFacingDirection(MovingLeft)
-		}
-	} else {
-		if relation.Y() > 0 {
-			e.SetFacingDirection(MovingDown)
-		} else {
-			e.SetFacingDirection(MovingUp)
-		}
-	}
-}
+// func (e *Entity) change_facing_direction(target_pos math2D.Vector2D) {
+// 	relation := math2D.SubtractVectors(target_pos, e.GetPosition())
+// 	if relation.Y() < 30 {
+// 		if relation.X() > 0 {
+// 			e.SetFacingDirection(MovingRight)
+// 		} else {
+// 			e.SetFacingDirection(MovingLeft)
+// 		}
+// 	} else {
+// 		if relation.Y() > 0 {
+// 			e.SetFacingDirection(MovingDown)
+// 		} else {
+// 			e.SetFacingDirection(MovingUp)
+// 		}
+// 	}
+// }
 
-func (e *Entity) block() {
-	e.blocked = true
-	e.direction = math2D.Vector2D{}
-}
+// func (e *Entity) block() {
+// 	e.blocked = true
+// 	e.direction = math2D.Vector2D{}
+// }
 
-func (e *Entity) unblock() {
-	e.blocked = false
-}
+// func (e *Entity) unblock() {
+// 	e.blocked = false
+// }
 
-func (e *Entity) is_blocked() bool {	
-	return e.blocked
-}
+// func (e *Entity) is_blocked() bool {	
+// 	return e.blocked
+// }
 
-func (e *Entity) set_speed(speed int) {
-	e.speed = speed
-}
+// func (e *Entity) set_speed(speed int) {
+// 	e.speed = speed
+// }
 
-func (e *Entity) get_speed() int {
-	return e.speed
-}
+// func (e *Entity) get_speed() int {
+// 	return e.speed
+// }
 
-func (e *Entity) Move() {
-	if e.direction.Magnitude() > 0 {
-		position := math2D.AddVectors(e.direction.MultiplyScalar(float64(e.speed)), e.GetPosition())
-		e.SetPosition(position.X(), position.Y())
-	}
-}
+// func (e *Entity) Move() {
+// 	if e.direction.Magnitude() > 0 {
+// 		position := math2D.AddVectors(e.direction.MultiplyScalar(float64(e.speed)), e.GetPosition())
+// 		e.SetPosition(position.X(), position.Y())
+// 	}
+// }
 
 
 // from settings import * 
